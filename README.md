@@ -1,0 +1,7 @@
+*b*Terraform Module Showing It's Functionality*b*
+
+This terraform file contains key tf files to show a few of the key features present in terraform. We have a variable.tf file, a terraform.tfvars file, an outfput.tf file and a backend.tf file. The rest of the tf files namely: ec2.tf, eip.tf and secgroups.tf are the actual resources that are created namely ec2 instances (user-defined), elastic ips with association to the ec2 instances, and the appropriate security group which has been associated with the instances created. 
+
+Also created a simple bash script to install some programs and display some text when the public IP is pasted in a web browser. The bash script also installs Jenkins and it can be accessed on the default port 8080. Security group allows access to the port.
+
+To successfully run this module, you would need to create your own dynamodb table with the LockID attrribute as well as an S3 bucket in the event that you want to store the state file remotely. If you desire to store it on your personal computer you do not need to create a dynamoDB table or an S3 bucker nor do you need the backend.tf module. You would still need to have your own .pem file to access the instance you create. At the moment terraform does not provide the ability to create that resource in aws to the best of my knowledge.
